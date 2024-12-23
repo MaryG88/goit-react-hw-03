@@ -20,8 +20,8 @@ const ContactSchema = Yup.object().shape({
     )
     .required("Required"),
   number: Yup.number()
-    .min(3, "Too short!")
-    .max(50, "Too long!")
+    .min(7, "Too short!")
+    .max(12, "Too long!")
     .required("Required")
     .positive()
     .integer(),
