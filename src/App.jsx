@@ -5,7 +5,7 @@ import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
 import SearchBox from "./components/SearchBox/SearchBox";
 
-function App() {
+const App = () => {
   const [contacts, setContacts] = useState(() => {
     const savedContacts =
       localStorage.getItem("contacts");
@@ -43,7 +43,17 @@ function App() {
     );
   }, [contacts]);
 
-  const addContact = (name, number) => {
+  const addContact = ({ name, number }) => {
+    if (
+      contacts.some(
+        (contact) =>
+          contact.name.toLowerCase() ===
+          name.toLowerCase()
+      )
+    ) {
+      alert(`${name} is already in contacts`);
+      return;
+    }
     const newContact = {
       id: nanoid(),
       name,
@@ -74,7 +84,7 @@ function App() {
   );
 
   return (
-    <>
+    <div className="container">
       <h1>Phonebook</h1>
       <ContactForm onSubmit={addContact} />
       <SearchBox
@@ -85,8 +95,8 @@ function App() {
         contacts={filteredContacts}
         onDeleteContact={deleteContact}
       />
-    </>
+    </div>
   );
-}
+};
 
 export default App;

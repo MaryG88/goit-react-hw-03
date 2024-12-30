@@ -9,20 +9,22 @@ const Contact = ({
   onDeleteContact,
 }) => (
   <li className={s.contactItem}>
-    <p className={s.contactData}>
-      <RiUser6Line
-        className={s.contactIcon}
-        size="16"
-      />
-      {name}
-    </p>
-    <p className={s.contactData}>
-      <MdOutlinePhone
-        className={s.contactIcon}
-        size="16"
-      />
-      {number}
-    </p>
+    <div className={s.contactContainer}>
+      <p className={s.contactData}>
+        <RiUser6Line
+          className={s.contactIcon}
+          size="16"
+        />
+        {name}
+      </p>
+      <p className={s.contactData}>
+        <MdOutlinePhone
+          className={s.contactIcon}
+          size="16"
+        />
+        {number}
+      </p>
+    </div>
     <button
       onClick={() => onDeleteContact(id)}
       className={s.deleteBtn}

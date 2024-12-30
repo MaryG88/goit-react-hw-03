@@ -1,17 +1,17 @@
 import s from "./SearchBox.module.css";
 
 const SearchBox = ({ value, onChange }) => (
-  <>
-    <label className={s.label}>
-      Find contacts by name:
+  <div className={s.searchBox}>
+    <label className={s.searchLabel}>
+      Find contacts by name
       <input
-        className={s.input}
+        className={s.searchInput}
         type="text"
-        value={filter}
+        value={value}
         onChange={onChange}
       />
     </label>
-  </>
+  </div>
 );
 
 export default SearchBox;

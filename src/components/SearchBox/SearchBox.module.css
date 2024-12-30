@@ -1,0 +1,16 @@
+.searchLabel {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6px;
+}
+
+.searchInput {
+  padding: 10px;
+  border: 1px solid rgb(65, 64, 64);
+  border-radius: 6px;
+  width: 400px;
+}
+
+.searchBox {
+  margin-bottom: 20px;
+}
